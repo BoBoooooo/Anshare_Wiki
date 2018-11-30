@@ -1,82 +1,74 @@
 # Mock Data
 
-Mock data is an integral part of the front-end development, the key link to separate the front and back-end development. By pre-agreed with the server-side interface, analog request data and even logic, can make the front-end development independent, will not be blocked by the development of the server.
+Mock 数据是前端开发过程中必不可少的一环，是分离前后端开发的关键链路。通过预先跟服务器端约定好的接口，模拟请求数据甚至逻辑，能够让前端开发独立自主，不会被服务端的开发所阻塞。
 
 ## Swagger
 
-In my company project, the data is usually simulated by the backend using [swagger](https://swagger.io/).
-`swagger`it is a REST APIs document generation tool that can cross-platform automatically generated from code comments, open source, support most of the language, the community is good. In short, it is very good and strongly recommended.
+我司项目中通常使用 [swagger](https://swagger.io/) 由后端来模拟数据。
+**swagger** 是一个 REST APIs 文档生成工具，可以跨平台从代码注释中自动生成，开源，支持大部分语言，社区好，总之非常不错，强烈推荐。
+[线上 demo](http://petstore.swagger.io/?_ga=2.222649619.983598878.1509960455-2044209180.1509960455#/pet/addPet)
 
-[Online Demo](http://petstore.swagger.io/?_ga=2.222649619.983598878.1509960455-2044209180.1509960455#/pet/addPet)
+## Easy-Mock
 
-## Easy-mock
-
-[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) uses [easy-mock](https://easy-mock.com/login) to simulate the data.
-It is a pure front-end visualization, and can quickly generate simulation data persistence services. It's very easy to use and can be combined with `swagger`, support cors. It's worth a try for both the team and the individual project.
-
-[Online Demo](https://easy-mock.com/)
+[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) 使用的是 [easy-mock](https://easy-mock.com/login) 来模拟数据。
+它是一个纯前端可视化，并且能快速生成模拟数据的持久化服务。非常的简单易用还能结合 `swagger`，支持跨域 ，不管团队还是个人项目都值得一试。
 
 ## Mockjs
 
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a purely front-end personal project, so all the data is generated locally by [mockjs](https://github.com/nuysoft/Mock). Its principle is: intercept all requests and proxy to local simulation data, so no network sends any request.
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 由于是一个纯前端个人项目，所有的数据都是用 [mockjs](https://github.com/nuysoft/Mock) 本地生成模拟出来的，它的原理是:拦截了所有的请求并代理到本地模拟数据，所以 network 中没有发出任何的请求。
 
-If you need to remove it is easy.
+如需改造本项目，去除 mockjs 也很简单。
 
-All mock data is in the `@/src/mock` directory. It will only intercept the url you declared in `@/src/mock/index.js`.
+所有的 mock 数据都在 `@/src/mock` 目录下，它只会拦截 `@/src/mock/index.js` 文件中拦截的 url。
 
-**Remove:** Just remove `import '/Mock'` from`@/src/main.js` and delete the `@/src/mock` folder.
+**移除**只需要在 `@/src/main.js` 中移除 `import './mock'` 并且删除 `@/src/mock` 文件夹即可。
 
-<br>
+## 本地 Mock 与线上切换
 
-## Switch from mock directly to server request
+有很多时候我们会遇到本地使用 mock 数据，线上环境使用真实数据。
 
-There are many times when we encounter, local use of mock data, and the online environment uses real data.
+- **Easy-Mock 的形式**
 
-- **Easy-Mock**
-
-You need to ensure that your local simulated api is consistent with all other addresses except the root path.
-such as:
+你需要保证你本地模拟 api 除了根路径其它的地址是一致的。
+比如：
 
 ```
-https://api-dev/login   // Local request
+https://api-dev/login   // 本地请求
 
-https://api-prod/login  // Online request
+https://api-prod/login  // 线上请求
 ```
 
-We can use the [environment variables](/guide/essentials/deploy.html#environmental-variables) to do different environments and request different api base path.
+我们可以通过之后会介绍的[环境变量](/zh/guide/essentials/deploy.html#环境变量)来做到不同环境下，请求不同的 api 地址。
 
 ```js
 //dev.env.js
 module.exports = {
-  // Inject the base path of the local API
-  BASE_API: '"https://api-dev"'
+  BASE_API: '"https://api-dev"' //注入本地api的根路径
 }
 ```
 
 ```js
 //prod.env.js
 module.exports = {
-  // Inject the base path of the production API
-  BASE_API: '"https://api-prod"'
+  BASE_API: '"https://api-prod"' //注入线上api的根路径
 }
 ```
 
-Then create an `axios` instance based on the environment variable to have a different `baseURL`.
-[@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+之后根据环境变量创建`axios`实例，让它具有不同的`baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
 
 ```js
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.BASE_API, // base_url of the API
+  baseURL: process.env.BASE_API, // api 的 base_url
   timeout: 5000 // request timeout
 })
 ```
 
-In this way we can automatically switched local and online apis based on environment variables.
+这样我们就做到了自动根据环境变量切换本地和线上 api。
 
-- **Mock.js**
+- **Mock.js 的切换**
 
-When we use `Mock.js` to simulate data locally, the real-world api method is used online. This is similar to the easy-mock method above. We mainly judge that when it is an online environment, we use real-world api. We only import `Mock.js` locally.
+当我们本地使用 `Mock.js` 模拟本地数据，线上使用真实环境 api 方法。这与上面的 easy-mock 的方法是差不多的。我们主要是判断：是线上环境的时候，不引入 mock 数据就可以了，只有在本地引入 `Mock.js`。
 
 ```js
 //main.js
@@ -85,4 +77,4 @@ if (process.env.NODE_ENV === 'development') {
 }
 ```
 
-Mock data is only import in the local environment.
+只有在本地环境之中才会引入 mock 数据。

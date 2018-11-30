@@ -1,16 +1,16 @@
-# Work with Server
+# 和服务端进行交互
 
-## Front-end request flow
+## 前端请求流程
 
-In `vue-element-admin` , a complete front-end UI interacts to the server-side processing flow as follows:
+在 `vue-element-admin` 中，一个完整的前端 UI 交互到服务端处理流程是这样的：
 
-1.  UI component interaction;
-2.  Call unified management API service request function;
-3.  Send requests using encapsulated request.js;
-4.  Get server return;
-5.  Update data;
+1.  UI 组件交互操作；
+2.  调用统一管理的 api service 请求函数；
+3.  使用封装的 request.js 发送请求；
+4.  获取服务端返回；
+5.  更新 data；
 
-As you can see from the above flow, in order to facilitate management and maintenance, unified request processing is placed in the `src/api` folder and the files are generally split according to the model latitude,such as:
+从上面的流程可以看出，为了方便管理维护，统一的请求处理都放在 `@/src/api` 文件夹中，并且一般按照 model 纬度进行拆分文件，如：
 
 ```
 api/
@@ -22,11 +22,10 @@ api/
 
 ## request.js
 
-`@/src/utils/request.js` is based on the [axios](https://github.com/axios/axios), to facilitate the uniform handling of POST, GET and other request parameters, request headers, and error messages。Specific can see [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js).
+其中，`@/src/utils/request.js` 是基于 [axios](https://github.com/axios/axios) 的封装，便于统一处理 POST，GET 等请求参数，请求头，以及错误提示信息等。具体可以参看 [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)。
+它封装了全局 `request拦截器`、`response拦截器`、`统一的错误处理`、`统一做了超时处理`、`baseURL设置等`。
 
-It encapsulates the global `request interceptor`, `response interceptor`,`unified error handling`, `unified timeout, baseURL settings, etc.`
-
-## An example of a request article list:
+## 一个请求文章列表页的例子：
 
 ```js
 // api/article.js
@@ -38,6 +37,7 @@ export function fetchList(query) {
     params: query
   })
 }
+
 
 // views/example/list
 import { fetchList } from '@/api/article'
@@ -58,6 +58,6 @@ export default {
 }
 ```
 
-## Switch from mock directly to server request
+## 从 mock 直接切换到服务端请求
 
-See [Mock Data](mock-api.md)
+见[ Mock 和联调](mock-api.md)

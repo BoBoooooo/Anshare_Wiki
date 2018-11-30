@@ -1,31 +1,30 @@
 # Git Hooks
 
-Programmers with basic engineering literacy will focus on coding specifications, and Code Linting (Lint) is an important means of ensuring code specification consistency.
+具备基本工程素养的同学都会注重编码规范，而代码风格检查（Code Linting，简称 Lint）是保障代码规范一致性的重要手段。
 
-What are the benefits of using Lint? In my opinion, it has at least the following three points:
+使用 Lint 会有什么好处呢？在我看来至少具有如下 3 点：
 
-- Fewer bugs
-- With higher development efficiency, Lint can easily find low-level, obvious errors.
-- Higher readability
+- 更少的 Bug
+- 更高的开发效率，Lint 很容易发现低级的、显而易见的错误
+- 更高的可读性
 
-Many times our `lint` check is placed in the continuous integration phase.
+很多时候我们`lint`的校验是放在那个在持续集成阶段
 
-> Push Code --> Run CI find problem(remote) --> Fixed in local --> Push Again --> Pass CI(remote)
+> 代码提交 --> 跑 CI 发现问题(远程) --> 本地修复问题 --> 重新提交 --> 通过检查(远程)
 
-But there is a problem with this. Our `CI` (continuous integration) often doesn't just do `Lint` work, it also has many other tasks, which leads to a special waste of time, often it may take a few minutes after you In order to know that there is a problem, or sometimes you have not found that your `CI` did not pass.
+但这样有一个问题，我们的 `CI`(持续集成) 往往不是仅仅只做 `Lint`工作，它还有会有很多其它的任务，这样就导致特别的浪费时间，往往可能需要几分钟之后你才会发现问题，或者有的时候你根本就没有发现你的 `CI` 没有跑通过。
 
-Common process: write the code locally, submit, start running lint, find the failure to pass, modify the code locally, submit again, wait for the result of CI, and repeat the previous operation if there are any problems.
+常见的流程：本地写好了代码，提交，开始跑 lint，发现不通过，本地修改代码，再提交，在等待 CI 的结果，若还有问题再重复之前的操作。
 
 ## husky
 
-The most effective solution is to put the `Lint` check locally. The common practice is to use
-[husky](https://github.com/typicode/husky) or [pre-commit](https://github.com/observing/pre-commit) do `Lint` before committing locally. Here we use `husky`.
+最有效的解决方案就是将 `Lint` 校验放到本地，常见做法是使用 [husky](https://github.com/typicode/husky) 或者 [pre-commit](https://github.com/observing/pre-commit) 在本地提交之前做 `Lint`。这里我们选用 `husky`。
 
 ```bash
 npm install husky -D -S
 ```
 
-Then modify package.json to add configuration:
+然后修改 package.json，增加配置：
 
 ```json
 {
@@ -35,23 +34,23 @@ Then modify package.json to add configuration:
 }
 ```
 
-Finally try Git commit and you will receive feedback soon:
+最后尝试 Git 提交，你就会很快收到反馈：
 
 ```
 git commit -m "Keep calm and commit"
 ```
 
-But there is a problem. This is that I may only change one file for this commit. For example, I changed the file of `foo.js`, but it will still check all the `.js` files under `src`. Very unfriendly. The problem is that I submitted the code I wrote, but I need to solve the other people code problem before.
+但这样会有一个问题，就是这次提交我可能只改了一个文件，比如我就改了 `foo.js` 的文件，但它依然会校验所有`src` 下面的`.js`文件，非常的不友好。导致的问题就是：我提交我写的代码，还先要帮人的代码问题解决了才能提交。
 
 ## lint-staged
 
-To solve the above pain points, you need to use [lint-staged](https://github.com/okonet/lint-staged). It will only check the parts that you submitted or you modified.
+解决上面的痛点就需要使用 [lint-staged](https://github.com/okonet/lint-staged) 了。它只会校验检查你提交或者说你修改的部分。
 
 ```bash
 npm install lint-staged -D -S
 ```
 
-Then, modify the package.json configuration:
+然后，修改 package.json 配置：
 
 ```json
 "precommit": "lint-staged"
@@ -64,10 +63,10 @@ Then, modify the package.json configuration:
   }
 ```
 
-As configured above, Verify that the code you submitted matches the `eslint`( [ESLint](eslint.md) ) rule of your local configuration, before your local `commit`. If it is met, the submission is successful. If it doesn't match, it will automatically execute `eslint --fix` to try to help you fix it automatically. If the repair is successful, it will help you to submit the repaired code. If it fails, it will prompt you have an error, and you will be able to submit the code after you fix it.
+如上配置，每次它只会在你本地 `commit` 之前，校验你提交的内容是否符合你本地配置的 `eslint`规则(这个见文档 [ESLint](eslint.md) )，如果符合则提交成功。如果不符合它会自动执行 `eslint --fix` 尝试帮你自动修复，如果修复成功则会帮你把修复好的代码提交，如果失败，则会提示你错误，让你修好这个错误之后才能允许你提交代码。
 
-## SumUp
+## 总结
 
-The best `lint` specification process is to recommend team members to configure `eslint` in their own editor, configure and enable the `eslint-loader` error in webpack, so the editor can help you fix some simple formatting errors and remind you of some places that don't meet the `lint` specification. And prompt you for errors on the command line. See the details [ESLint](eslint.md)。
+最佳的 `lint` 规范流程就是推荐团队成员先在自己的编辑器中配置 `eslint`，在 webpack 中配置并开启 `eslint-loader` 错误提示，这样平时写的时候编辑器就能帮你修正一些简单的格式错误，同时提醒你有哪些不符合 `lint` 规范的的地方，并在命令行中提示你错误。这方面详细的内容见 [ESLint](eslint.md)。
 
-But this is not mandatory. Some team members or newly arrived interns are not configured in the editor or ignore the error in the command line. In this case, you need to configure the mandatory checker of `precommit` to ensure that All code submitted to the remote repository is team compliant.
+但这并不是强制的，有些团队成员或者说刚来的实习生没有在编辑器中配置或者无视命令行中提示的错误，这时候就需要配置`precommit` 这种强制性校验的东西，保证所有提交到远程仓库的内容都是符合团队规范的。

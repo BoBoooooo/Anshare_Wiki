@@ -5,8 +5,8 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'vue-element-admin',
-  description: 'A magical vue admin',
+  title: 'Anshare Team Knowledge',
+  description: 'A magical share center',
   base: '/vue-element-admin-site/',
   head: [
     [
@@ -29,25 +29,21 @@ module.exports = {
     },
     locales: {
       '/': {
-        label: 'English',
-        selectText: 'Languages',
-        editLinkText: 'Edit this page on GitHub',
+        label: '简体中文',
+        selectText: '选择语言',
+        editLinkText: '在 GitHub 上编辑此页',
         nav: [
           {
-            text: 'Guide',
+            text: '指南',
             link: '/guide/'
           },
           {
-            text: 'Features',
-            items: genNav(deepClone(ComponentNav), 'EN')
+            text: '功能',
+            items: genNav(deepClone(ComponentNav), 'ZH')
           },
           {
-            text: 'Ecosystem',
-            items: genNav(deepClone(EcosystemNav), 'EN')
-          },
-          {
-            text: 'Donate',
-            link: '/donate/'
+            text: '生态系统',
+            items: genNav(deepClone(EcosystemNav), 'ZH')
           }
         ],
         sidebar: {
@@ -78,14 +74,14 @@ module.exports = {
           '/feature/script/': ['/feature/script/svgo.md']
         }
       },
-      '/zh/': {
+      '/': {
         label: '简体中文',
         selectText: '选择语言',
         editLinkText: '在 GitHub 上编辑此页',
         nav: [
           {
             text: '指南',
-            link: '/zh/guide/'
+            link: '/guide/'
           },
           {
             text: '功能',
@@ -94,42 +90,34 @@ module.exports = {
           {
             text: '生态系统',
             items: genNav(deepClone(EcosystemNav), 'ZH')
-          },
-          {
-            text: '捐赠',
-            link: '/zh/donate/'
           }
         ],
         sidebar: {
-          '/zh/guide/': [
+          '/guide/': [
             {
               title: '基础',
               collapsable: false,
-              children: genEssentialsSidebar('/zh')
+              children: genEssentialsSidebar('')
             },
             {
               title: '进阶',
               collapsable: false,
-              children: genAdvancedSidebar('/zh')
+              children: genAdvancedSidebar('')
             }
           ],
-          '/zh/feature/component/': getComponentSidebar(
+          '/feature/component/': getComponentSidebar(
             deepClone(ComponentNav),
             'ZH'
           ),
-          '/zh/feature/script/': ['/zh/feature/script/svgo.md']
+          '/feature/script/': ['/feature/script/svgo.md']
         }
       }
     }
   },
   locales: {
     '/': {
-      lang: 'en-US',
-      description: 'A magical vue admin'
-    },
-    '/zh/': {
       lang: 'zh-CN',
-      description: 'A magical vue admin'
+      description: 'Anshare Wiki百科,专注于技术分享'
     }
   },
   configureWebpack: {
