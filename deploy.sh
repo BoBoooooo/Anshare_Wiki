@@ -16,6 +16,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f "https://${access_token}@github.com/BoBoooooo/Anshare_Wiki.git" master:gh-pages
+git push -f git@github.com:boboooooo/Anshare_Wiki.git master:gh-pages
 
 cd -
