@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /bg.png
+heroImage: /home.png
 title: a
 actionText: 了解一下 →
 actionLink: /guide/

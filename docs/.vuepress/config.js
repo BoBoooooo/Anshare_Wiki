@@ -7,7 +7,7 @@ var { genNav, getComponentSidebar, deepClone } = utils
 module.exports = {
   title: 'Anshare Team Knowledge',
   description: 'A magical share center',
-  base: '/vue-element-admin-site/',
+  base: '/',
   head: [
     [
       'link',
@@ -18,15 +18,15 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    repo: 'PanJiaChen/vue-element-admin',
-    docsRepo: 'PanJiaChen/vue-element-admin-site',
-    docsDir: 'docs',
-    editLinks: true,
+    // repo: 'PanJiaChen/vue-element-admin',
+    // docsRepo: 'PanJiaChen/vue-element-admin-site',
+    // docsDir: 'docs',
+    // editLinks: true,
     sidebarDepth: 3,
-    algolia: {
-      apiKey: 'ffce0083d0830de5f562c045a481410b',
-      indexName: 'vue_element_admin'
-    },
+    // algolia: {
+    //   apiKey: 'ffce0083d0830de5f562c045a481410b',
+    //   indexName: 'vue_element_admin'
+    // },
     locales: {
       '/': {
         label: '简体中文',
@@ -39,57 +39,11 @@ module.exports = {
           },
           {
             text: '功能',
-            items: genNav(deepClone(ComponentNav), 'ZH')
+            items: genNav(deepClone(ComponentNav))
           },
           {
             text: '生态系统',
-            items: genNav(deepClone(EcosystemNav), 'ZH')
-          }
-        ],
-        sidebar: {
-          '/guide/': [
-            {
-              title: 'Essentials',
-              collapsable: false,
-              children: genEssentialsSidebar()
-            },
-            {
-              title: 'Advanced',
-              collapsable: false,
-              children: genAdvancedSidebar()
-            },
-            {
-              title: 'Other',
-              collapsable: false,
-              children: [
-                '/guide/other/gitter.md',
-                '/guide/other/release-notes.md'
-              ]
-            }
-          ],
-          '/feature/component/': getComponentSidebar(
-            deepClone(ComponentNav),
-            'EN'
-          ),
-          '/feature/script/': ['/feature/script/svgo.md']
-        }
-      },
-      '/': {
-        label: '简体中文',
-        selectText: '选择语言',
-        editLinkText: '在 GitHub 上编辑此页',
-        nav: [
-          {
-            text: '指南',
-            link: '/guide/'
-          },
-          {
-            text: '功能',
-            items: genNav(deepClone(ComponentNav), 'ZH')
-          },
-          {
-            text: '生态系统',
-            items: genNav(deepClone(EcosystemNav), 'ZH')
+            items: genNav(deepClone(EcosystemNav))
           }
         ],
         sidebar: {
@@ -97,29 +51,23 @@ module.exports = {
             {
               title: '基础',
               collapsable: false,
-              children: genEssentialsSidebar('')
+              children: genEssentialsSidebar()
             },
             {
               title: '进阶',
               collapsable: false,
-              children: genAdvancedSidebar('')
+              children: genAdvancedSidebar()
             }
           ],
-          '/feature/component/': getComponentSidebar(
-            deepClone(ComponentNav),
-            'ZH'
-          ),
+          '/feature/component/': getComponentSidebar(deepClone(ComponentNav)),
           '/feature/script/': ['/feature/script/svgo.md']
-        }
+        },
+        lang: 'zh-CN',
+        description: 'Anshare Wiki百科,专注于技术分享'
       }
     }
   },
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-      description: 'Anshare Wiki百科,专注于技术分享'
-    }
-  },
+
   configureWebpack: {
     resolve: {
       alias: {

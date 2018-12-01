@@ -2,22 +2,11 @@ function deepClone(d) {
   return JSON.parse(JSON.stringify(d))
 }
 
-function genNav(items, type = 'EN') {
+function genNav(items) {
   return items.filter(v => {
-    if (v.type && v.type !== type) return false
-
-    if (v[`text${type}`]) {
-      v.text = v[`text${type}`]
-    }
-
-    if (type != 'EN' && v.link && !isExternalLink(v.link)) {
-      v.link = `/${type.toLocaleLowerCase()}${v.link}`
-    }
-
     if (v.items && v.items.length > 0) {
-      v.items = genNav(v.items, type)
+      v.items = genNav(v.items)
     }
-
     return v
   })
 }
@@ -31,11 +20,8 @@ function isExternalLink(routePath) {
   return validateURL(routePath)
 }
 
-function getComponentSidebar(item, type = 'EN') {
+function getComponentSidebar(item) {
   return item[0].items.map(v => {
-    if (type != 'EN' && v.link && !isExternalLink(v.link)) {
-      v.link = `/${type.toLocaleLowerCase()}${v.link}`
-    }
     return v.link
   })
 }
