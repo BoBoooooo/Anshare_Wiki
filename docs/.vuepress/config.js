@@ -7,7 +7,7 @@ var { genNav, getComponentSidebar, deepClone } = utils
 module.exports = {
   title: 'Anshare Team Knowledge',
   description: 'A magical share center',
-  base: '/Anshare_Wiki/',
+  base: '/',
   head: [
     [
       'link',
