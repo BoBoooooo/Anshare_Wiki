@@ -1,11 +1,11 @@
 var nav = require('./nav.js')
-var { EcosystemNav, ComponentNav } = nav
+var { ComponentNav } = nav
 
 var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Team Knowledge',
+  title: 'Anshare Wiki百科',
   description: 'A magical share center',
   base: '/',
   head: [
@@ -18,20 +18,10 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    // repo: 'PanJiaChen/vue-element-admin',
-    // docsRepo: 'PanJiaChen/vue-element-admin-site',
-    // docsDir: 'docs',
-    // editLinks: true,
     sidebarDepth: 3,
-    // algolia: {
-    //   apiKey: 'ffce0083d0830de5f562c045a481410b',
-    //   indexName: 'vue_element_admin'
-    // },
     locales: {
       '/': {
         label: '简体中文',
-        selectText: '选择语言',
-        editLinkText: '在 GitHub 上编辑此页',
         nav: [
           {
             text: '指南',
@@ -40,10 +30,6 @@ module.exports = {
           {
             text: '功能',
             items: genNav(deepClone(ComponentNav))
-          },
-          {
-            text: '生态系统',
-            items: genNav(deepClone(EcosystemNav))
           }
         ],
         sidebar: {

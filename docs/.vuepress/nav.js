@@ -1,67 +1,3 @@
-var EcosystemNav = [
-  {
-    text: '项目',
-    items: [
-      {
-        text: 'vue-element-admin',
-        link: 'https://github.com/PanJiaChen/vue-element-admin'
-      },
-      {
-        text: 'vue-admin-template',
-        link: 'https://github.com/PanJiaChen/vue-admin-template'
-      },
-      {
-        text: 'electron-vue-admin',
-        link: 'https://github.com/PanJiaChen/electron-vue-admin'
-      },
-      {
-        text: 'vue-typescript-admin-template',
-        link: 'https://github.com/Armour/vue-typescript-admin-template'
-      },
-      {
-        text: 'vue-countTo',
-        link: 'https://github.com/PanJiaChen/vue-countTo'
-      },
-      {
-        text: 'vue-split-pane',
-        link: 'https://github.com/PanJiaChen/vue-split-pane'
-      },
-      {
-        text: 'awesome-bookmarks',
-        link: 'https://github.com/PanJiaChen/awesome-bookmarks'
-      }
-    ]
-  },
-  {
-    text: '帮助',
-    items: [
-      {
-        text: 'Gitter讨论组',
-        link: 'https://gitter.im/vue-element-admin/discuss'
-      },
-      {
-        text: '作者Blog',
-        link: 'https://jianshiapp.com/circles/1209',
-        type: 'ZH'
-      },
-      {
-        text: '常见问题',
-        link: '/zh/guide/other/faq.md',
-        type: 'ZH'
-      },
-      {
-        text: 'QQ群',
-        link: 'https://github.com/PanJiaChen/vue-element-admin/issues/602',
-        type: 'ZH'
-      },
-      {
-        text: '更新记录',
-        link: 'https://github.com/PanJiaChen/vue-element-admin/releases'
-      }
-    ]
-  }
-]
-
 var ComponentNav = [
   {
     text: '组件',
@@ -104,6 +40,5 @@ var ComponentNav = [
 ]
 
 module.exports = {
-  EcosystemNav,
   ComponentNav
 }

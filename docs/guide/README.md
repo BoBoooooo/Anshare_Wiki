@@ -4,26 +4,6 @@ pageClass: getting-started
 
 # 介绍
 
-[![vue](https://img.shields.io/badge/vue-2.5.10-brightgreen.svg)](https://github.com/vuejs/vue)
-[![element-ui](https://img.shields.io/badge/element--ui-2.3.2-brightgreen.svg)](https://github.com/ElemeFE/element)
-[![Build Status](https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master)](https://travis-ci.org/PanJiaChen/vue-element-admin)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg)](https://github.com/PanJiaChen/vue-element-admin/releases)
-[![donate](https://img.shields.io/badge/%24-donate-ff69b4.svg)](https://panjiachen.gitee.io/vue-element-admin-site/zh/donate)
-[![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
-
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于 Vue2.0，配合使用 Element UI 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
-
-:::tip 建议
-本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。
-
-- 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-- 基础模板: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
-- 桌面终端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-  :::
-
-<br/>
-
 ## 功能
 
 ```
@@ -182,25 +162,3 @@ npm install --registry=https://registry.npm.taobao.org
 ::: tip 建议
 你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vue-admin-template` 的基础上进行二次开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
 :::
-
-## Contribution
-
-本文档项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site) 基于 [vuepress](https://github.com/vuejs/vuepress)开发。
-
-有任何修改和建议都可以该项目 pr 和 issue
-
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
-
-## 捐赠
-
-如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
-[Donate](/zh/donate/)
-
-## Browsers Support
-
-Modern browsers and Internet Explorer 10+.
-
-<!-- prettier-ignore -->
-| [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
