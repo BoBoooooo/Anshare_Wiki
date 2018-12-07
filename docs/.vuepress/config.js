@@ -24,11 +24,11 @@ module.exports = {
         label: '简体中文',
         nav: [
           {
-            text: '指南',
+            text: '入门指南',
             link: '/guide/'
           },
           {
-            text: '功能',
+            text: '框架介绍',
             items: genNav(deepClone(ComponentNav))
           }
         ],
