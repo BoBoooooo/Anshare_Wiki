@@ -35,6 +35,11 @@ module.exports = {
         sidebar: {
           '/guide/': [
             {
+              title: '前言',
+              collapsable: false,
+              children: ['/guide/perface/perface.md']
+            },
+            {
               title: '基础',
               collapsable: false,
               children: genEssentialsSidebar()
@@ -67,16 +72,15 @@ module.exports = {
 function genEssentialsSidebar(type = '') {
   const mapArr = [
     '/guide/',
-    '/guide/essentials/layout.md',
-    '/guide/essentials/router-and-nav.md',
-    '/guide/essentials/permission.md',
-    '/guide/essentials/tags-view.md',
-    '/guide/essentials/new-page.md',
-    '/guide/essentials/style.md',
-    '/guide/essentials/server.md',
-    '/guide/essentials/mock-api.md',
-    '/guide/essentials/import.md',
-    '/guide/essentials/deploy.md'
+    '/guide/essentials/environment.md',
+    '/guide/essentials/frontend.md',
+    '/guide/essentials/backend.md'
+    // '/guide/essentials/new-page.md',
+    // '/guide/essentials/style.md',
+    // '/guide/essentials/server.md',
+    // '/guide/essentials/mock-api.md',
+    // '/guide/essentials/import.md',
+    // '/guide/essentials/deploy.md'
   ]
   return mapArr.map(i => {
     return type + i
@@ -85,16 +89,16 @@ function genEssentialsSidebar(type = '') {
 
 function genAdvancedSidebar(type = '') {
   const mapArr = [
-    '/guide/advanced/cors.md',
-    '/guide/advanced/eslint.md',
-    '/guide/advanced/git-hook.md',
-    '/guide/advanced/lazy-loading.md',
-    '/guide/advanced/chart.md',
-    '/guide/advanced/icon.md',
-    '/guide/advanced/theme.md',
-    '/guide/advanced/i18n.md',
-    '/guide/advanced/error.md',
-    '/guide/advanced/webpack.md'
+    '/guide/advanced/cors.md'
+    // '/guide/advanced/eslint.md',
+    // '/guide/advanced/git-hook.md',
+    // '/guide/advanced/lazy-loading.md',
+    // '/guide/advanced/chart.md',
+    // '/guide/advanced/icon.md',
+    // '/guide/advanced/theme.md',
+    // '/guide/advanced/i18n.md',
+    // '/guide/advanced/error.md',
+    // '/guide/advanced/webpack.md'
   ]
   return mapArr.map(i => {
     return type + i

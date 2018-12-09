@@ -4,7 +4,7 @@ pageClass: getting-started
 
 ![Web Developer Roadmap](https://i.imgur.com/oxsayps.png)
 
-> Roadmap to becoming a web developer in 2018
+> 收藏的一份Roadmap，相对来说比较权威，不懂处自行翻译。
 
 
 <br>
