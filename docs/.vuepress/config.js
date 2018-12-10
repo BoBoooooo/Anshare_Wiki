@@ -5,8 +5,8 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Wiki百科',
-  description: 'A magical share center',
+  title: 'Anshare Wiki百科 v0.1',
+  description: '为创造而生',
   base: '/',
   head: [
     [

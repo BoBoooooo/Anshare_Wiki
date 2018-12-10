@@ -219,3 +219,5 @@
 ## 常见面试题
 - [前端工作面试问题](https://github.com/darcyclarke/Front-end-Developer-Interview-Questions)
 - [前端开发面试题（中文）](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question)
+
+> 初学可以忽略

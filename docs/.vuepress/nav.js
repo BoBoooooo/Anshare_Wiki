@@ -33,7 +33,7 @@ var ComponentNav = [
     items: [
       {
         text: '...',
-        link: '/guide/perface/perface1.md'
+        link: '/guide/perface/perface.md'
       }
     ]
   }
