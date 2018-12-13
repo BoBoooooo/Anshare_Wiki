@@ -63,6 +63,17 @@
 ## 版本控制
 
 > 目前公司采用GitLab , 部分老项目在Svn。
-  - 版本管理
-    - [Git](http://git-scm.com/)/[SVN](http://subversion.apache.org/)
-    - [Github](https://github.com/)/[GitLab](https://about.gitlab.com/)
+  - [Git](http://git-scm.com/)/[SVN](http://subversion.apache.org/)
+  - [Github](https://github.com/)/[GitLab](https://about.gitlab.com/)
+  - [码云](https://gitee.com/)
+  - [coding](https://coding.net/)
+  - ...
+  
+## 科学上网
+- [XX.net](https://github.com/XX-net/XX-Net)，开源，需要自己进行搭建。有免费通道。
+
+- `蓝灯(Landern)`，每个月免费500M流量，稳定性较差。
+
+- `shadowsocket`，需要自己买VPS进行搭建。全端设备均可用。**可以选择现成的VPS服务商,例如[搬瓦工](https://vps.nanpbs.top/bwg/buy.html?f=bad)，支持一键部署SSR**
+
+- `其他各种第三方VPN（大部分需要付费）`
