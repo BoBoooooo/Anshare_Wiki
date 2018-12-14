@@ -1,5 +1,5 @@
 var nav = require('./nav.js')
-var { ComponentNav } = nav
+var { ComponentNav, MultipleNav } = nav
 
 var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
@@ -30,6 +30,10 @@ module.exports = {
           {
             text: '框架介绍',
             items: genNav(deepClone(ComponentNav))
+          },
+          {
+            text: '综合教程',
+            items: genNav(deepClone(MultipleNav))
           }
         ],
         sidebar: {
@@ -50,7 +54,8 @@ module.exports = {
               children: genAdvancedSidebar()
             }
           ],
-          '/feature/component/': getComponentSidebar(deepClone(ComponentNav)),
+          '/multiple/powerdesign/': ['/multiple/powerdesign/index.md'],
+
           '/feature/script/': ['/feature/script/svgo.md']
         },
         lang: 'zh-CN',

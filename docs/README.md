@@ -17,5 +17,5 @@ features:
     details: ...
   - title: IIS/Tomcat
     details: ...
-footer: Copyright © 2018-Anshare Dev
+footer: Copyright © 2018-Anshare Dev By BoBo
 ---
