@@ -54,8 +54,6 @@ module.exports = {
               children: genAdvancedSidebar()
             }
           ],
-          '/multiple/powerdesign/': ['/multiple/powerdesign/index.md'],
-
           '/feature/script/': ['/feature/script/svgo.md']
         },
         lang: 'zh-CN',
