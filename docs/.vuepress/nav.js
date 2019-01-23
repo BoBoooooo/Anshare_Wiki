@@ -9,6 +9,10 @@ let MultipleNav = [
   {
     text: 'PowerDesign制作数据库教程',
     link: '/feature/script/svgo.md'
+  },
+  {
+    text: '服务器从零到项目部署',
+    link: '/feature/script/deploy.md'
   }
 ]
 

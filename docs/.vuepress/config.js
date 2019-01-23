@@ -54,7 +54,8 @@ module.exports = {
               children: genAdvancedSidebar()
             }
           ],
-          '/feature/script/': ['/feature/script/svgo.md']
+          '/feature/script/': ['/feature/script/svgo.md'],
+          '/feature/script/': ['/feature/script/deploy.md']
         },
         lang: 'zh-CN',
         description: 'Anshare Wiki百科,专注于技术分享'
