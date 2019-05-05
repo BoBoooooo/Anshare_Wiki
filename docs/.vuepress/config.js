@@ -30,7 +30,7 @@ module.exports = {
           },
           {
             text: '框架介绍',
-            items: genNav(deepClone(ComponentNav))
+            link: '/frameworks/'
           },
           {
             text: '综合教程',
@@ -39,20 +39,22 @@ module.exports = {
         ],
         sidebar: {
           '/guide/': [
-            {
-              title: '前言',
-              collapsable: false,
-              children: ['/guide/perface/perface.md']
-            },
+            '/guide/perface/perface.md',
             {
               title: '基础',
               collapsable: false,
-              children: genEssentialsSidebar()
-            },
+              children: genEssentialsSidebar('guide')
+            }
+          ],
+          '/frameworks/': [
+            '/frameworks/perface/perface.md',
+            '/frameworks/perface/perface.md',
+            '/frameworks/perface/perface.md',
+            '/frameworks/perface/perface.md',
             {
-              title: '进阶',
+              title: '组件',
               collapsable: false,
-              children: genAdvancedSidebar()
+              children: genEssentialsSidebar('frameworks')
             }
           ],
           '/feature/script/yapi': ['/feature/script/yapi.md'],
@@ -76,37 +78,21 @@ module.exports = {
 }
 
 function genEssentialsSidebar(type = '') {
-  const mapArr = [
-    '/guide/',
-    '/guide/essentials/environment.md',
-    '/guide/essentials/frontend.md',
-    '/guide/essentials/backend.md'
-    // '/guide/essentials/new-page.md',
-    // '/guide/essentials/style.md',
-    // '/guide/essentials/server.md',
-    // '/guide/essentials/mock-api.md',
-    // '/guide/essentials/import.md',
-    // '/guide/essentials/deploy.md'
-  ]
-  return mapArr.map(i => {
-    return type + i
-  })
-}
-
-function genAdvancedSidebar(type = '') {
-  const mapArr = [
-    '/guide/advanced/cors.md'
-    // '/guide/advanced/eslint.md',
-    // '/guide/advanced/git-hook.md',
-    // '/guide/advanced/lazy-loading.md',
-    // '/guide/advanced/chart.md',
-    // '/guide/advanced/icon.md',
-    // '/guide/advanced/theme.md',
-    // '/guide/advanced/i18n.md',
-    // '/guide/advanced/error.md',
-    // '/guide/advanced/webpack.md'
-  ]
-  return mapArr.map(i => {
-    return type + i
-  })
+  let mapArr
+  if (type === 'guide') {
+    mapArr = [
+      '/guide/',
+      '/guide/essentials/environment.md',
+      '/guide/essentials/frontend.md',
+      '/guide/essentials/backend.md'
+    ]
+  } else {
+    mapArr = [
+      '/frameworks/',
+      '/frameworks/essentials/environment.md',
+      '/frameworks/essentials/frontend.md',
+      '/frameworks/essentials/backend.md'
+    ]
+  }
+  return mapArr
 }
