@@ -2,28 +2,21 @@
 pageClass: getting-started
 ---
 
-![Web Developer Roadmap](https://i.imgur.com/oxsayps.png)
-
-> 收藏的一份Roadmap，相对来说比较权威，不懂处自行翻译。
-
-
-<br>
-
 # 学习路线图
 
-![](https://i.imgur.com/OZUOUtI.png)
+![](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/intro.png?raw=true)
 
 ## 🎨 前端 Roadmap
 
-![](../.vuepress/public/roadmap/frontend-v2.png)
+![](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/frontend.png?raw=true)
 
 ## 👽 后端 Roadmap
 
 
-![](https://i.imgur.com/Ihg4YAb.png)
+![](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/backend.png?raw=true)
 
 ## 👷 运维 Roadmap
 
-![](https://i.imgur.com/pyg9mH1.png)
+![](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/devops.png?raw=true)
 
 
