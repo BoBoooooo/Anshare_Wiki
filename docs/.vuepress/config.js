@@ -84,7 +84,15 @@ function genEssentialsSidebar(type = '') {
       '/guide/essentials/backend.md'
     ]
   } else {
-    mapArr = ['/frameworks/essentials/CrudTable.md']
+    mapArr = [
+      '/frameworks/essentials/CrudTable.md',
+      '/frameworks/essentials/BaseTable.md',
+      '/frameworks/essentials/GenerateForm.md',
+      '/frameworks/essentials/GenerateFormDialog.md',
+      '/frameworks/essentials/SvgIcon.md',
+      '/frameworks/essentials/Echarts.md',
+      '/frameworks/essentials/FileUpload.md'
+    ]
   }
   return mapArr
 }
