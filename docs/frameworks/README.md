@@ -6,8 +6,12 @@ pageClass: getting-started
 ## 快速上手
 
 > 该项目雏形框架由[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)演变而来。
+  建议新同学可以先去阅读一下几篇[配套文章](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E5%89%8D%E5%BA%8F%E5%87%86%E5%A4%87)。
 
-> 建议新同学可以先去阅读一下几篇配套文章[vue-element-admin-docs](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E5%89%8D%E5%BA%8F%E5%87%86%E5%A4%87) 
+## 安装
+
+目前项目均托管在公司[gitlab](http://www.axtech.net.cn:16822/users/sign_in)，账号权限请找老杨获取，
+拉取相应的项目即可。
 
 ## 构建和发布
 本项目基于 [Vue CLI 3](https://cli.vuejs.org/config/) 构建。
@@ -71,7 +75,7 @@ npm run report:out
 ## 目录结构
 
 ```bash
-├── deployment                      # 自动化部署相关
+├── deployment                 # 自动化部署相关
 ├── public                     # public文件夹
 │   └── index.html             # html模板
 ├── src                        # 源代码
