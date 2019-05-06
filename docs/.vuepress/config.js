@@ -47,10 +47,7 @@ module.exports = {
             }
           ],
           '/frameworks/': [
-            '/frameworks/perface/perface.md',
-            '/frameworks/perface/perface.md',
-            '/frameworks/perface/perface.md',
-            '/frameworks/perface/perface.md',
+            '/frameworks/',
             {
               title: '组件',
               collapsable: false,
@@ -87,12 +84,7 @@ function genEssentialsSidebar(type = '') {
       '/guide/essentials/backend.md'
     ]
   } else {
-    mapArr = [
-      '/frameworks/',
-      '/frameworks/essentials/environment.md',
-      '/frameworks/essentials/frontend.md',
-      '/frameworks/essentials/backend.md'
-    ]
+    mapArr = ['/frameworks/essentials/CrudTable.md']
   }
   return mapArr
 }
