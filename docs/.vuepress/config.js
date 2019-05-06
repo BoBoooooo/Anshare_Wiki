@@ -87,6 +87,7 @@ function genEssentialsSidebar(type = '') {
     mapArr = [
       '/frameworks/essentials/CrudTable.md',
       '/frameworks/essentials/BaseTable.md',
+      '/frameworks/essentials/FlowableDialog.md',
       '/frameworks/essentials/GenerateForm.md',
       '/frameworks/essentials/GenerateFormDialog.md',
       '/frameworks/essentials/SvgIcon.md',
