@@ -34,6 +34,7 @@
 |      remoteFuncs       |               远程数据方法(用于表单内远端数据请求)                |     Object      |                    -                    |    {}     |
 |      allResponse       |             直接传入表头和表体,表格不用再发起任何请求             |     Object      |                    -                    |   null    |
 |      rowClassName      |                     行的 className 的回调方法                     | String,Function |                    -                    |   null    |
+|      pageSize      |                     动态传入分页                     | Array |                    -                    |   [10,50,100]    |
 
 ## events
 
