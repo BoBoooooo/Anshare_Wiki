@@ -29,7 +29,7 @@
 |   promiseForColumns    |                      自定义列表 config 请求                       |    Function     |                    -                    |   null    |
 |     btnAddOnClick      |                         添加按钮点击事件                          |    Function     |                    -                    |   null    |
 |     btnEditOnClick     |                         编辑按钮点击事件                          |    Function     |                    -                    |   null    |
-|    btnDetailOnClick    |                         删除按钮点击事件                          |    Function     |                    -                    |    ''     |
+|    btnDetailOnClick    |                         查看按钮点击事件                          |    Function     |                    -                    |    ''     |
 |     showPagination     |                      自定义列表 config 请求                       |     Boolean     |               true/false                |   true    |
 |      remoteFuncs       |               远程数据方法(用于表单内远端数据请求)                |     Object      |                    -                    |    {}     |
 |      allResponse       |             直接传入表头和表体,表格不用再发起任何请求             |     Object      |                    -                    |   null    |
