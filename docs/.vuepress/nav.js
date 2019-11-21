@@ -17,6 +17,10 @@ let MultipleNav = [
   {
     text: 'Yapi接口平台使用教程',
     link: '/feature/script/yapi.md'
+  },
+  {
+    text: 'https教程',
+    link: '/feature/script/https.md'
   }
 ]
 

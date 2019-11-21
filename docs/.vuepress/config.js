@@ -56,7 +56,8 @@ module.exports = {
           ],
           '/feature/script/yapi': ['/feature/script/yapi.md'],
           '/feature/script/svgo': ['/feature/script/svgo.md'],
-          '/feature/script/deploy': ['/feature/script/deploy.md']
+          '/feature/script/deploy': ['/feature/script/deploy.md'],
+          '/feature/script/https': ['/feature/script/https.md']
         },
         lang: 'zh-CN',
         description: 'Anshare Wiki百科,专注于技术分享'
