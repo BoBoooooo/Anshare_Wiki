@@ -2,7 +2,7 @@
 pageClass: getting-started
 ---
 
-# 学习路线图
+# 学习路线图（已更新至2020版）
 
 ![](https://pic.downk.cc/item/5e291a992fb38b8c3c368cfe.png)
 
