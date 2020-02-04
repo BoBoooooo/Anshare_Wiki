@@ -5,7 +5,7 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Wiki百科 v0.1',
+  title: 'Anshare Wiki百科 v0.2',
   description: '为创造而生',
   base: '/',
   head: [
@@ -82,7 +82,8 @@ function genEssentialsSidebar(type = '') {
       '/guide/',
       '/guide/essentials/environment.md',
       '/guide/essentials/frontend.md',
-      '/guide/essentials/backend.md'
+      '/guide/essentials/backend.md',
+      '/guide/essentials/pm.md'
     ]
   } else {
     mapArr = [

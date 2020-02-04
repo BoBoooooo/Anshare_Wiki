@@ -1,5 +1,5 @@
 
-# 前端入门
+# 前端资料
 ![前端知识结构](https://raw.github.com/JacksonTian/fks/master/figures/fks.jpg)
 
 ## 必备基础技能
