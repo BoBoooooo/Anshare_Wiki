@@ -5,7 +5,7 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Wiki百科 v0.2',
+  title: 'Anshare Wiki百科 v0.3',
   description: '为创造而生',
   base: '/',
   head: [
@@ -33,6 +33,10 @@ module.exports = {
             link: '/frameworks/'
           },
           {
+            text: '收藏夹',
+            link: '/resource/'
+          },
+          {
             text: '综合教程',
             items: genNav(deepClone(MultipleNav))
           }
@@ -41,11 +45,12 @@ module.exports = {
           '/guide/': [
             '/guide/perface/perface.md',
             {
-              title: '基础',
+              title: '学习资料',
               collapsable: false,
               children: genEssentialsSidebar('guide')
             }
           ],
+          '/resource/': ['/resource/bi.md'],
           '/frameworks/': [
             '/frameworks/',
             {
