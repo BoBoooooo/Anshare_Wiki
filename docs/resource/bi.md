@@ -3,7 +3,19 @@
 
 > **Anshare Frontend** :man:  2020年02月11日
 
-## 现成产品(大部分收费)
+## 第三方产品
+
+### RDP报表工具
+
+[在线地址](http://bitool.boboooooo.top:8899/RDP-SERVER/login.html)
+
+账号密码均为 admin
+
+### FineReport
+
+帆软的一套报表工具
+
+## 互联网产品(大部分收费)
 
 `优点:不需要写代码,后台有设计器直接拖拽`
 
