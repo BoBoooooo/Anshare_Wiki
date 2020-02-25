@@ -5,7 +5,7 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Wiki百科 v0.3',
+  title: 'Anshare Wiki百科 v0.4',
   description: '为创造而生',
   base: '/',
   head: [
@@ -62,7 +62,8 @@ module.exports = {
           '/feature/script/yapi': ['/feature/script/yapi.md'],
           '/feature/script/svgo': ['/feature/script/svgo.md'],
           '/feature/script/deploy': ['/feature/script/deploy.md'],
-          '/feature/script/https': ['/feature/script/https.md']
+          '/feature/script/https': ['/feature/script/https.md'],
+          '/feature/script/cndeploy': ['/feature/script/cndeploy.md']
         },
         lang: 'zh-CN',
         description: 'Anshare Wiki百科,专注于技术分享'

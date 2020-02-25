@@ -21,6 +21,10 @@ let MultipleNav = [
   {
     text: 'https教程',
     link: '/feature/script/https.md'
+  },
+  {
+    text: '中创中间件教程',
+    link: '/feature/script/cndeploy.md'
   }
 ]
 
