@@ -17,5 +17,5 @@ features:
     details: Vue CLI 致力于将 Vue 生态中的工具基础标准化。它确保了各种构建工具能够基于智能的默认配置即可平稳衔接，这样你可以专注在撰写应用上，而不必花好几天去纠结配置的问题。与此同时，它也为每个工具提供了调整配置的灵活性，无需 eject。
   - title: IIS/Tomcat
     details: Web服务器
-footer: Copyright © 2018-Anshare Dev By BoBo
+footer: Copyright © 2015-2020 Anshare Dev By BoBo
 ---

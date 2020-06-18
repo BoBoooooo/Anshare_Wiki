@@ -101,7 +101,7 @@ function genEssentialsSidebar(type = '') {
       '/guide/essentials/backend.md',
       '/guide/essentials/pm.md'
     ]
-  } else if (type === 'framework') {
+  } else if (type === 'frameworks') {
     mapArr = [
       '/frameworks/essentials/CrudTable.md',
       '/frameworks/essentials/BaseTable.md',
@@ -113,7 +113,13 @@ function genEssentialsSidebar(type = '') {
       '/frameworks/essentials/FileUpload.md'
     ]
   } else if (type === 'devtools') {
-    mapArr = ['/frameworks/devtools/FlowDesigner.md']
+    mapArr = [
+      '/frameworks/devtools/FlowDesigner.md',
+      '/frameworks/devtools/FormDesigner.md',
+      '/frameworks/devtools/TableDesigner.md',
+      '/frameworks/devtools/Dict.md',
+      '/frameworks/devtools/TopologyDesigner.md'
+    ]
   } else if (type === 'settings') {
     mapArr = ['/frameworks/settings/Auth.md']
   }
