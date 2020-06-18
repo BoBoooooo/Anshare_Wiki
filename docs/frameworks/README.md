@@ -86,6 +86,8 @@ npm run report:out
 │   ├── assets                 # 主题 字体等静态资源
 │   ├── components             # 全局公用组件
 │   ├── icons                  # 项目所有 svg icons
+│   ├── model                  # 自定义model
+│   ├── plugins                # 插件(axios,element ui,echarts)等
 │   ├── router                 # 路由
 │   ├── store                  # 全局 store管理
 │   ├── styles                 # 全局样式

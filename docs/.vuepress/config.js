@@ -5,7 +5,7 @@ var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
-  title: 'Anshare Wiki百科 v0.4',
+  title: 'Anshare Wiki百科 v1.1',
   description: '为创造而生',
   base: '/',
   head: [
@@ -57,6 +57,16 @@ module.exports = {
               title: '组件',
               collapsable: false,
               children: genEssentialsSidebar('frameworks')
+            },
+            {
+              title: '系统设置',
+              collapsable: false,
+              children: genEssentialsSidebar('settings')
+            },
+            {
+              title: '开发人员工具',
+              collapsable: false,
+              children: genEssentialsSidebar('devtools')
             }
           ],
           '/feature/script/yapi': ['/feature/script/yapi.md'],
@@ -91,7 +101,7 @@ function genEssentialsSidebar(type = '') {
       '/guide/essentials/backend.md',
       '/guide/essentials/pm.md'
     ]
-  } else {
+  } else if (type === 'framework') {
     mapArr = [
       '/frameworks/essentials/CrudTable.md',
       '/frameworks/essentials/BaseTable.md',
@@ -102,6 +112,10 @@ function genEssentialsSidebar(type = '') {
       '/frameworks/essentials/Echarts.md',
       '/frameworks/essentials/FileUpload.md'
     ]
+  } else if (type === 'devtools') {
+    mapArr = ['/frameworks/devtools/FlowDesigner.md']
+  } else if (type === 'settings') {
+    mapArr = ['/frameworks/settings/Auth.md']
   }
   return mapArr
 }
