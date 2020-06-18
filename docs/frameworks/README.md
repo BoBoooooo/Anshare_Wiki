@@ -78,20 +78,22 @@ npm run report:out
 ├── deployment                 # 自动化部署相关
 ├── public                     # public文件夹
 │   └── index.html             # html模板
+│   └── css                    # 公有css
+│   └── js                     # 公有js(一些插件直接引入html)
+│   └── ntko                   # ntko插件页面
 ├── src                        # 源代码
 │   ├── api                    # 所有请求
 │   ├── assets                 # 主题 字体等静态资源
 │   ├── components             # 全局公用组件
 │   ├── icons                  # 项目所有 svg icons
-│   ├── layout                 # 全局 layout
 │   ├── router                 # 路由
 │   ├── store                  # 全局 store管理
 │   ├── styles                 # 全局样式
 │   ├── utils                  # 全局公用方法
 │   ├── views                  # views 所有页面
 │   ├── App.vue                # 入口页面
-│   ├── main.js                # 入口文件 加载组件 初始化等
-│   └── permission.js          # 权限管理
+│   ├── main.ts                # 入口文件 加载组件 初始化等
+│   └── permission.ts          # 权限管理
 ├── tests                      # 测试
 ├── .env.xxx                   # 环境变量配置(包含多种环境变量,详情见具体项目)
 ├── vue.config.js              # vue-cli 配置
