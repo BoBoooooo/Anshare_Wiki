@@ -33,6 +33,10 @@ module.exports = {
             link: '/frameworks/'
           },
           {
+            text: '前端知识梳理',
+            link: '/frontend/'
+          },
+          {
             text: '收藏夹',
             link: '/resource/'
           },
@@ -73,7 +77,14 @@ module.exports = {
           '/feature/script/svgo': ['/feature/script/svgo.md'],
           '/feature/script/deploy': ['/feature/script/deploy.md'],
           '/feature/script/https': ['/feature/script/https.md'],
-          '/feature/script/cndeploy': ['/feature/script/cndeploy.md']
+          '/feature/script/cndeploy': ['/feature/script/cndeploy.md'],
+          '/frontend': [
+            {
+              title: '资料',
+              collapsable: false,
+              children: genEssentialsSidebar('frontend')
+            }
+          ]
         },
         lang: 'zh-CN',
         description: 'Anshare Wiki百科,专注于技术分享'
@@ -122,6 +133,8 @@ function genEssentialsSidebar(type = '') {
     ]
   } else if (type === 'settings') {
     mapArr = ['/frameworks/settings/Auth.md']
+  } else if (type === 'frontend') {
+    mapArr = ['/frontend/', '/frontend/http.md']
   }
   return mapArr
 }
