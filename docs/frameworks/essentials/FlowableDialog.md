@@ -1,9 +1,17 @@
 # FlowableDialog
 
-## 一、MyTask对象
+> 详情查看 @/mdoel/flowStepButtonConfig
 
-``` javascript
- const myTask =  {
+## 零、须知
+
+工作流模块 businessID -> processInstanceId -> taskId
+
+          业务表id -> 流程实例id -> 具体task id
+
+## 一、MyTask 对象 (backMyTask 接口)
+
+```javascript
+const myTask = {
   approveuser: '', // 下一步接收人
   comment: '', // 当前步骤填写的意见
   endTime: '', // 接收时间
@@ -15,7 +23,7 @@
   name: '', // 步骤名称
   originator: '', // ???
   processDefinitionName: '', // ???
-  trend: '', // 发送的时候 传trend  
+  trend: '', // 发送的时候 传trend
   workFlowStatus: '', // ???
   processInstanceId: '', // 流程实例id processInstanceId
   nextStepList: [], // 下一步骤集合
@@ -29,129 +37,95 @@
   isapprove: '', // 是否正在审批
   approvetaskresult: '', // 审批结果
   approveloopusers: null, // 自定义审批顺序
-  approvestepid: '', // 当前审批步骤id(自定义)
-};
-
+  approvestepid: '' // 当前审批步骤id(自定义)
+}
 ```
 
 ## 二、当前步骤配置对象
 
-``` javascript
+```javascript
 const stepConfig = {
-  flowTitle: 'BusinessActPerson_personname,BusinessActPerson_personunit,BusinessActPerson_personrank',  // 流程标题
+  flowTitle:
+    'BusinessActPerson_personname,BusinessActPerson_personunit,BusinessActPerson_personrank', // 流程标题
   customFlowTitle: '', // 自定义流程标题
-  fieldStatus: [],  // 
-  flowSource: 'business_act_clueinfo,business_act_person',   // 整个流程关联的数据源
+  fieldStatus: [], //
+  flowSource: 'business_act_clueinfo,business_act_person', // 整个流程关联的数据源
   stepConfig: {
-    id: 'sid-D339D7C3-27C6-44E3-AEF6-4C068EC1B7D8', // 步骤id
-    formTitle: '线索件登记', // 步骤标题
-    visibleOpinion: true, // 是否显示意见栏
-    opinionLabel: '承办人意见', // 开启意见栏的时候 左边label的名字
-    supportMultipleSend: false, // 是否支持发送给多人
-    visibleReceiveUser: false, // ??? 
-    buttons: [       // 当前步骤关联的所有按钮
-      {
-        note: '保存',  
-        condition: '',   
-        title: '保存',
-        script: 'save',
-      },
-      {
-        note: '发送到选择信访线索处理方式',
-        handleStepMember: 'sid-D339D7C3-27C6-44E3-AEF6-4C068EC1B7D8',
-        selectType: '4',
-        sort: 1,
-        title: '选择线索处置方式',
-        script: 'send',
-      },
-    ],
-    visibleWenShuCodeBtn: false,  // 是否显示生成文号按钮
-    visibleMergeHandle: true,  // 是否显示重复件
-    approveList: [   // 如果开启审批 (审批顺序)
-      {
-        stepid: 'd1b50c06-2b0e-407d-8cc1-49eaaa15bc67',
-        approvenode: '副处长审批',
-        approvepost: 'd433ec64-6589-42b4-989a-b62b9364bf5f',  // 岗位id  (数据库里dept_post 部门设置里可以配置岗位)
-      },
-      {
-        stepid: 'b2cab7b2-507d-4761-8f48-e2f4bb42f347',
-        approvenode: '处长审批',
-        approvepost: 'b641e8ea-cebf-4c2d-866a-ff67a7b8d5e1',
-      },
-      {
-        stepid: 'a5fad1f8-16ab-4d92-a5e5-a62adf1c6fa2',
-        approvenode: '副局长审批',
-        approvepost: 'eae9e332-cefd-448c-b7cd-cf18637f9563',
-      },
-      {
-        stepid: '2cd992e4-afbb-4a52-b9e4-d964fbba8de3',
-        approvenode: '局长审批',
-        approvepost: 'd5d583fd-0207-4dd9-8292-9cb0f600d3c1',
-      },
-      {
-        stepid: '4ad2f938-0a35-4b0e-be1a-24e813deb473',
-        approvenode: '副书记审批',
-        approvepost: '55a29862-5279-4f9c-9479-a1a4e12277d1',
-      },
-      {
-        stepid: '54f2f52c-ae4d-450d-bab9-a92ddc7e1036',
-        approvenode: '书记审批',
-        approvepost: '11f2ce5b-7fba-4efd-ac55-571608797148',
-      },
-    ],
+    id: '', // 当前步骤Id
+    name: '', // 当前步骤名
+    formTitle: '', // 表单标题
+    formDesignName: '', // 表单绑定name
+    visibleOpinion: false, // 意见填写框是否显示
+    visibleWenShuCodeBtn: false, // 生成文号按钮是否显示
+    visibleAssistBtn: false, // 协办人分配按钮是否显示
+    visibleMergeHandle: false, // 合并处置是否显示
+    visibleLaunchApproveBtn: false, // 是否可以发起审批
+    buttons: [], // 右侧功能按钮 里面对象为 buttonEntity
+    files: [], // 当前步骤文书
+    requiredFiles: [], // 必填文书
+    measureList: [], // 措施列表
+    fieldStatus: [], // 当前步骤字段状态
+    autoCreateFiles: [], // 自动生成的文书
+    opinionLabel: '', // 意见label文字,默认为当前步骤名
+    supportMultipleSend: false, // 该步骤是否支持发送给多人,默认只允许一个人
+    supportAddClueInfo: false, // 是否开启流程表单内录入线索按钮
+    approveLowestConfig: [], // 最低审批权限配置项
+    approveList: [], // 审批走向
+    visibleReceiveUser: false, // 是否允许指定接收人
     autoSendNextStep: false, // 是否自动进入下一步
-    visibleLaunchApproveBtn: true, // 是否可以发起审批
-    name: '线索登记', // 当前步骤名称 (跟后台步骤名称一致)
-    files: ['6ba824d8-2650-4d9b-bf2d-58b65b0a6988'], // 当前步骤可以制作的文书
-    requiredFiles: ['6ba824d8-2650-4d9b-bf2d-58b65b0a6988'], // 必须制作的文书
-    autoCreateFiles: [], // 是否自动生成文书
-    formDesignName: '问题线索登记表初始', // 步骤绑定的表单名
-    visibleAssistBtn: false, // 协办人的按钮是否显示
-    supportAddClueInfo: false, // 线索登记按钮是否显示 (业务按钮,可不管)
-    approveLowestConfig: [  // 最低审批权限 
-      {
-        personLevel: '其他', // 职级   例如 正职干部  比如批到书记为止
-        lowestApproveLevel: '2cd992e4-afbb-4a52-b9e4-d964fbba8de3', // 最低审批的环节id
-      },
-    ],
-    guide: [], // 向导(后期可能会删除)
-    measureList: [], // 当前步骤可以发起的措施 
-  },
-};
-
-
+    guide: [] // 向导配置
+  }
+}
 ```
 
-## 三、button的配置信息
+## 三、button 的配置信息
 
-``` javascript 
+```javascript
+const buttonEntity = {
+  title: '', // 按钮名称
+  ico: '', // 图标
+  script: '', // 功能
+  note: '', // 按钮说明
+  condition: '', // 按钮流转条件
+  selectType: '0', // 选人策略,默认所有人
+  handleStepMember: '', // 某一步骤处理者,发送退回共用
+  selectDeptList: [], // 选择范围
+  handleUser: '', // 具体某一处理者
+  message: '', // 弹框提示内容
+  handlePost: '' // 按岗位发送
+}
 
+// selectType 选人策略枚举 eunm
 
-
+const ENUM = {
+  All: '0', // 所有成员
+  ByStep: '4', // 某一步处理人
+  ByRequest: '5', // 后台动态返回，用得少
+  ByUser: '6' // 指定某一处理人, 用得少
+}
 ```
-
 
 ## 四、请求的接口
 
-* 打开表单的时候
-  * backMyTask 获取整体流程信息接口
-  * listBean 获取表单信息 
-  * getStepConfig 获取当前步骤配置信息  (传参 flowKey , sid)
-  * stepInfo 当前步骤具体信息
-  * getApproveUserList 找当前审批结点相关人员信息 
-  * getWenShus 返回当前步骤需要制作文书的信息
-  * form detail 获取当前步骤绑定表单的json(主表)
-  * dynamictables detail 获取当前表单子表的表格设计
-  * getChartJson 获取流程图json
-  * findHistoryFlow 获取所有已走过的步骤信息(每个步骤的意见以及审批意见)
-  * listComment 获取意见信息  跟上述这个接口类似 
-  * /act/task/approveopinion/list 获取常用签批意见接口
-  * /file/fileList (list) 获取当前附件
-
+- 打开表单的时候
+  - backMyTask 获取整体流程信息接口
+  - listBean 获取表单信息
+  - getStepConfig 获取当前步骤配置信息 (传参 flowKey , sid)
+  - stepInfo 当前步骤具体信息
+  - getApproveUserList 找当前审批结点相关人员信息
+  - getWenShus 返回当前步骤需要制作文书的信息
+  - form detail 获取当前步骤绑定表单的 json(主表)
+  - dynamictables detail 获取当前表单子表的表格设计
+  - getChartJson 获取流程图 json
+  - findHistoryFlow 获取所有已走过的步骤信息(每个步骤的意见以及审批意见)
+  - listComment 获取意见信息 跟上述这个接口类似
+  - /act/task/approveopinion/list 获取常用签批意见接口
+  - /file/fileList (list) 获取当前附件
 
 ## 组件文档
 
 ## methods
 
-|   方法名    |     说明     | 参数 |
-| :---------: | :----------: | :--: |
+| 方法名 | 说明 | 参数 |
+| :----: | :--: | :--: |
+
