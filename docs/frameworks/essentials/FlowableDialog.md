@@ -111,7 +111,6 @@ const ENUM = {
   - backMyTask 获取整体流程信息接口
   - listBean 获取表单信息
   - getStepConfig 获取当前步骤配置信息 (传参 flowKey , sid)
-  - stepInfo 当前步骤具体信息
   - getApproveUserList 找当前审批结点相关人员信息
   - getWenShus 返回当前步骤需要制作文书的信息
   - form detail 获取当前步骤绑定表单的 json(主表)
