@@ -78,6 +78,7 @@ module.exports = {
           '/feature/script/deploy': ['/feature/script/deploy.md'],
           '/feature/script/https': ['/feature/script/https.md'],
           '/feature/script/cndeploy': ['/feature/script/cndeploy.md'],
+          '/feature/script/jenkins': ['/feature/script/jenkins.md'],
           '/frontend': [
             {
               title: '资料',
