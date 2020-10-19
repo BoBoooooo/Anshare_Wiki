@@ -19,7 +19,7 @@ http://116.62.78.229:8080/
 * **前端更新包获取**
 
 > 默认为本地包 (`http://localhost:8085`)
-> 生产环境需手动到`index.html页面`中修改`__HOST__URL__ `
+> 生产环境需手动到`index.html页面`中修改`__HOST__URL__ `,`__PREFIX__URL__`
 
 !['前端包获取'](https://pic.downk.cc/item/5f87efdb1cd1bbb86bec0de9.png)
 
