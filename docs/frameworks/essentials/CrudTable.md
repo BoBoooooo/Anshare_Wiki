@@ -1,5 +1,5 @@
 
-# 多功能Crud插件
+# 多功能Crud插件 (Anshare版本)
 
 - 基于el-table,el-form二次封装,表单表格支持可视化配置。
 `版本2.13.2`
@@ -71,6 +71,10 @@ npm install anshare-multifunction-crud --save
 // main.js
 
 import AnshareMultifunctionCrud from 'anshare-multifunction-crud';
+
+import 'anshare-multifunction-crud/lib/AnshareCrud.css'; // 此处css引入需要放到element-ui css引入之前,避免样式覆盖问题
+
+import '@/plugins/element';// 引入element-ui;
 
 Vue.use(AnshareMultifunctionCrud);
 
@@ -192,7 +196,7 @@ Vue.use(AnshareMultifunctionCrud);
 |   done    |       表格数据请求完成       |              整个 CrudTable 组件对象               |
 | selection |           多选事件           |              选中的行 (params: Array)              |
 |  change   | 监听 dialog 中 form 对象改变 | 返回当前表单对象以及当前表单 json (params: Object) |
-| btnOnClick |           表单内按钮组件点击回调           |             widget(表单组件json)              |
+| form-btn-on-click |           表单内按钮组件点击回调           |             widget(表单组件json)              |
 | `el-table events` |           所有el-table其他事件见官网文档          |          https://element.eleme.cn/#/zh-CN/component/table            |
 
 
@@ -203,7 +207,7 @@ Vue.use(AnshareMultifunctionCrud);
 | columnFormatter | 结合表格设计自定义列使用 |
 |  btnBarPrevBtn  |           自定义右上角功能按钮           |
 |    btnCustom    |      自定义操作按钮 参数为 {row}     |
-|    SeniorSearchForm    |      自定义高级查询表单      |
+|    seniorSearchForm    |      自定义高级查询表单      |
 |    dialogFooter    |      弹出表单右侧底部slot     |
 
 ### methods
