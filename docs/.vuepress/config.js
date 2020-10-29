@@ -116,7 +116,6 @@ function genEssentialsSidebar(type = '') {
   } else if (type === 'frameworks') {
     mapArr = [
       '/frameworks/essentials/CrudTable.md',
-      '/frameworks/essentials/BaseTable.md',
       '/frameworks/essentials/FlowableDialog.md',
       '/frameworks/essentials/GenerateForm.md',
       '/frameworks/essentials/GenerateFormDialog.md',
