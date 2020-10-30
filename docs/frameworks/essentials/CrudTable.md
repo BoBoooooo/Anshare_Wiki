@@ -109,8 +109,6 @@ Vue.use(AnshareMultifunctionCrud);
 |      visibleList       |                         内部元素显示控制(详情见下方)                          |     Object      |                    -                    |    {}     |
 |       tableTitle       |                             表格标题                              |     String      |                    -                    |    ''     |
 |      tableParams       |                   表格请求参数(带查询参数请求)                    |  Object,Array   |                    -                    |    {}     |
-|    multiTableParams    |                           多表关联条件                            |     String      |                    -                    |    ''     |
-|      expandModel       |                             表格标题                              |     String      |                    -                    |    ''     |
 |        textMap         |                          表单对话框标题                           |     Object      | { add:'添加',edit:'编辑',detail:'查看'} |    {}     |
 |     promiseForDel      |                    自定义删除按钮 promise 请求                    |    Function     |      Function({id})      |   -    |
 |    promiseForSelect    |                    自定义列表查询 promise 请求                    |    Function     |                    Function(searchCondition)                   |   -    |
