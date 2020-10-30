@@ -1,58 +1,54 @@
 
-# 多功能Crud插件 (Anshare版本)
+# 多功能Crud插件
 
-- 基于el-table,el-form二次封装,表单表格支持可视化配置。
-`版本2.13.2`
+- 基于el-table,el-form二次封装,表单表格支持可视化配置 `ElementUI 版本2.13.2`
 - 表单设计器
-  - 基础组件: 内置element-ui 表单组件
+  - 基础组件: 内置element-ui表单组件
   - 高级组件: 
-    - 级联选择器 (el-cascader)
-    - Tinymce 富文本编辑器
-    - 附件模块 (FileUpload)
-    - 表格模块 (CrudTable)
-    - 树形下拉框 (vue-treeSelect)
+    - `级联选择器` (el-cascader)
+    - `Tinymce` 富文本编辑器
+    - `附件模块` (FileUpload)
+    - `表格模块` (CrudTable)
+    - `树形下拉框` (vue-treeSelect)
 - 表格设计器
-- 注意:本插件采用umd打包发布,支持cdn引入
+- 注意:本插件采用umd打包发布,支持cdn引入.
 ``` html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <!-- import CSS -->
-  <link rel="stylesheet" href="  https://cdn.jsdelivr.net/npm/anshare-multifunction-crud@版本号/lib/AnshareCrud.css">
-
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-
-</head>
-<body>
-  <div id="app">
-    <!-- 表单设计器dialog -->
-    <form-designer-dialog ref="dialog"></form-designer-dialog>
-
-    <!-- CrudTable -->
-    <crud-table tableName="users"></crud-table>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="../lib/AnshareCrud.css" />
+  </head>
+  <body>
+    <div id="app">
+      <el-button @click="showDialog('form')" type="primary">打开表单设计器</el-button>
+      <el-button @click="showDialog('table')" type="danger">打开表格设计器</el-button>
+      <form-designer-dialog ref="form"></form-designer-dialog>
+      <table-designer-dialog ref="table"></table-designer-dialog>
+      <crud-table tableName="dept" tableTitle="表格示例"></crud-table>
+    </div>
+  </body>
   <!-- import Vue before Element -->
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-
   <!-- import JavaScript -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="../lib/AnshareCrud.umd.js"></script>
 
-  <!-- import 多功能Crud插件 -->
-  <script src="https://cdn.jsdelivr.net/npm/anshare-multifunction-crud@版本号/lib/AnshareCrud.umd.min.js"></script>
   <script>
     new Vue({
-      el: '#app',
+      el: "#app",
       methods:{
-        showDialog(){
-          this.$refs.dialog.showDialog();
+        showDialog(name){
+          this.$refs[name].showDialog();
         }
-      },
-    })
+      }
+    });
   </script>
 </html>
- 
   ```
 
 ## 开始使用
@@ -86,15 +82,15 @@ Vue.use(AnshareMultifunctionCrud);
 
 <FormDesignerDialog></FormDesignerDialog> // 表单设计器
 
+<TableDesignerDialog></TableDesignerDialog> // 表格设计器
+
 <CrudTable></CrudTable> // CrudTable
 
 ```
 
-
-
 # CrudTable
 
-### props
+## Props
 
 |          参数          |                               说明                                |      类型       |                 可选值                  |  默认值   |
 | :--------------------: | :---------------------------------------------------------------: | :-------------: | :-------------------------------------: | :-------: |
@@ -147,35 +143,33 @@ Vue.use(AnshareMultifunctionCrud);
 |      border      |                     是否有边框                     | Boolean |                    -                    |  true    |
 |      paginationLayout      |                     分页显示                     | String |   见官网   |  total, prev, pager, next, jumper, sizes    |
 
-### props补充说明
+## Props 补充说明
 
 - `visibleList`
+
 ```
   // 内部元素显示控制
-
-   {
-      searchForm: true, // 查询区域
-      tableTitle: true, // 表格标题
-      btnAdd: true, // 添加按钮
-      btnDel: false, // 批量删除按钮
-      btnExport: true, // 导出按钮
-      btnImport: false, // 导入按钮
-      actionColumnBtnAdd: false, // 操作列添加按钮
-      actionColumnBtnEdit: true, // 操作列编辑按钮
-      actionColumnBtnDetail: false, // 操作列查看按钮
-      actionColumnBtnDel: true, // 操作列删除按钮
-      actionColumn: true, // 操作列
-      seniorSearchBtn:true, // 高级查询按钮
-      btnAddOnColumnHeader: false, // 操作列header添加按钮
-    };
-
+  {
+    searchForm: true, // 查询区域
+    tableTitle: true, // 表格标题
+    btnAdd: true, // 添加按钮
+    btnDel: false, // 批量删除按钮
+    btnExport: true, // 导出按钮
+    btnImport: false, // 导入按钮
+    actionColumnBtnAdd: false, // 操作列添加按钮
+    actionColumnBtnEdit: true, // 操作列编辑按钮
+    actionColumnBtnDetail: false, // 操作列查看按钮
+    actionColumnBtnDel: true, // 操作列删除按钮
+    actionColumn: true, // 操作列
+    seniorSearchBtn:true, // 高级查询按钮
+    btnAddOnColumnHeader: false, // 操作列header添加按钮
+  };
 ```
 
 - `textMap`
 
 ```
 // 按钮文字Map
-
 {
   add: '添加',
   edit: '编辑',
@@ -184,12 +178,11 @@ Vue.use(AnshareMultifunctionCrud);
   export: '导出',
   import: '导入',
 }
-
 ```
 
 
 
-### events
+## Events
 
 | 事件名称  |             说明             |                      回调参数                      |
 | :-------: | :--------------------------: | :------------------------------------------------: |
@@ -200,7 +193,7 @@ Vue.use(AnshareMultifunctionCrud);
 | `el-table events` |           所有el-table其他事件见官网文档          |          https://element.eleme.cn/#/zh-CN/component/table            |
 
 
-### slots
+## Slots
 
 |    插槽名称     |                   说明                   |
 | :-------------: | :--------------------------------------: |
@@ -210,7 +203,7 @@ Vue.use(AnshareMultifunctionCrud);
 |    seniorSearchForm    |      自定义高级查询表单      |
 |    dialogFooter    |      弹出表单右侧底部slot     |
 
-### methods
+## Methods
 
 |   方法名    |     说明     | 参数 |
 | :---------: | :----------: | :--: |
