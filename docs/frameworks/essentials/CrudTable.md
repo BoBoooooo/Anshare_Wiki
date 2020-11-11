@@ -189,7 +189,7 @@ npm i anshare-multifunction-crud -S
     actionColumnBtnDetail: false, // 操作列查看按钮
     actionColumnBtnDel: true, // 操作列删除按钮
     actionColumn: true, // 操作列
-    seniorSearchBtn:true, // 高级查询按钮
+    seniorSearchForm:true, // 高级查询表单是否显示(隐藏则需要slot传入自定义高级查询表单)
     btnAddOnColumnHeader: false, // 操作列header添加按钮
   };
 ```
