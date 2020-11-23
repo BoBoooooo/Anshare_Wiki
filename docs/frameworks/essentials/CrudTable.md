@@ -236,3 +236,4 @@ npm i anshare-multifunction-crud -S
 |   方法名    |     说明     | 参数 |
 | :---------: | :----------: | :--: |
 | tableReload | 重新加载列表 |  -   |
+| getElTable | 获取原生el-table对象 |  -   |
