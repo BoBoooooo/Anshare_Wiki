@@ -1,5 +1,5 @@
 
-# AnshareCrud
+# 🎉 Anshare多功能Crud插件 
 
 ## 特性
 - 基于el-table,el-form二次封装,表单表格支持可视化配置
@@ -64,6 +64,22 @@ npm i anshare-multifunction-crud -S
 </html>
   ```
 
+### 本地调试
+
+- 本地debug
+
+``` javascript
+// 调试代码位于examples/App.vue
+npm start
+```
+- lib包debug
+``` javascript
+// 1、umd打包
+npm run demo
+// 2、打开index.html
+```
+
+
 ### 引入 AnshareMultifunctionCrud
 
 支持完整引入及按需引入,*该插件基于ElementUI封装,注意引用顺序*
@@ -118,24 +134,25 @@ npm i anshare-multifunction-crud -S
 
 ## 组件文档
 
+> Ps: CrudTable继承自[el-table](https://element.eleme.cn/#/zh-CN/component/table).官方`props`,`events`均可直接使用.此处只列出本插件新增props,events.
+
 ### CrudTable
 
 #### Props
 
 |          参数          |                               说明                                |      类型       |                 可选值                  |  默认值   |
 | :--------------------: | :---------------------------------------------------------------: | :-------------: | :-------------------------------------: | :-------: |
+|     [el-table Props](https://element.eleme.cn/#/zh-CN/component/table)     |                             [见官网](https://element.eleme.cn/#/zh-CN/component/table)                               |      -      |                    -                    |     -     |
 |     expandRowKeys      |                              展开行                               |      Array      |                    -                    |     -     |
 |       listField        |                        response 中数据位置                        |     String      |             data/data.list              | data.list |
 |      setReadOnly       | GenerateFormDialog 中的表单禁用.null 表示均可编辑;{}表示全部只读; |     Object      |   null/{}/{whiteList:{},blackList:{}}   |   null    |  |
 |       isMultiple       |                           是否开启多选                            |     Boolean     |               true,false                |   false   |
-|       emptyText        |                      列表数据为空时显示文字                       |     String      |                    -                    | 暂无数据  |
 |        prefill         |                      表单预填项(赋值初始值)                       |     Object      |                    -                    |   null    |
 |      appendToBody      |                 表单对话框是否插入至 body 元素上                  |     Boolean     |               true/false                |   false   |
 |       tableName        |                               表名                                |     String      |                    -                    |    ''     |
 |   tableDesignerName    |      用于请求表格设计 json 的 name,不传则默认读取 tableName       |     String      |                    -                    |   null    |
 | dialogFormDesignerName |    对话框内加载 FormDesigner 的表名,,不传则默认读取 tableName     |     String      |                    -                    |   null    |
 |     orderCondition     |                             排序条件                              |     String      |                    -                    |   null    |
-|        columns         |     自定义列配置项,会和 tableDesignerName 请求到的配置项合并      |      Array      |                    -                    |    []     |
 |      visibleList       |                         内部元素显示控制(详情见下方)                          |     Object      |                    -                    |    {}     |
 |       tableTitle       |                             表格标题                              |     String      |                    -                    |    ''     |
 |      tableParams       |                   表格请求参数(带查询参数请求)                    |  Object,Array   |                    -                    |    {}     |
@@ -151,24 +168,18 @@ npm i anshare-multifunction-crud -S
 |    btnDetailVisibleFunc    |                    表格行中的查看按钮是否显示事件                     |    Function     |                    Function(row)                    |   -    |
 |     showPagination     |                      自定义列表 config 请求                       |     Boolean     |               true/false                |   true    |
 |      remoteFuncs       |               远程数据方法(用于表单内远端数据请求)                |     Object      |                    -                    |    {}     |
-|      allResponse       |             直接传入表头和表体,表格不用再发起任何请求             |     Object      |                    -                    |   null    |
-|      rowClassName      |                     行的 className 的回调方法                     | String,Function |                    见官网                    |   null    |
 |      pageSize          |                     动态传入分页                     | Array |                    -                    |   [10,50,100]    |
 |      maxHeightMinus    |                     表格自适应高度需要减去的高度值                     | Number |                    -                    |   285    |
 |      fullHeight        |                     是否自适应屏幕高度(配置MaxHeightMinus)                     | Boolean |                    -                    |   false    |
 |      selectableFunc    |                     选择框动态判断是否显示                     | Function |                    -                    |   null   |
 |      fullscreen      |                     表单是否全屏                     | Boolean |                    -                    |  false    |
 |      closeOnClickModal      |                    表单点击阴影是否可以关闭                     | Boolean |                    -                    |  false    |
+|      dialogWidth      |                    表单宽度                     | String |                    -                    |  1000px    |
 |      showColumnIndex      |                     是否显示序号列                     | Boolean |                    -                    |   false    |
 |      exportDownloadUrl      |                     自定义导出url                    | String |                    -                    |   null    |
-|      showOperator      |                     查询区域是否显示查询条件(默认不显示,查询条件为like)                     | Boolean |                    -                    |   false    |
-|      border      |                     是否有边框                     | Boolean |                    -                    |  true    |
 |      formTableConfig      |                     表单中表格的tableConfig                     | Object |                    -                    |   详情看GenerateFormItem中解释    |
 |      formValuesAsync      |                     异步更新表单数据                     | Object |                    -                    |  外层异步传入数据更新表单,注意不能直接修改formValues    |
-|      editInlineMode      |                     是否开启行内编辑模式                     | Boolean |                    -                    |  false    |
 |      actionColumnWidth      |                     操作列宽度(有时需要直接指定列宽)                    | Number |                    -                    |  null    |
-|      stripe      |                     斑马纹                     | Boolean |                    -                    |  false    |
-|      border      |                     是否有边框                     | Boolean |                    -                    |  true    |
 |      paginationLayout      |                     分页显示                     | String |   见官网   |  total, prev, pager, next, jumper, sizes    |
 
 #### Props 补充说明
@@ -189,7 +200,7 @@ npm i anshare-multifunction-crud -S
     actionColumnBtnDetail: false, // 操作列查看按钮
     actionColumnBtnDel: true, // 操作列删除按钮
     actionColumn: true, // 操作列
-    seniorSearchForm:true, // 高级查询表单是否显示(隐藏则需要slot传入自定义高级查询表单)
+    seniorSearchForm:true, // 高级查询表单是否显示 (改为false需要通过slot传入自定义高级查询表单)
     btnAddOnColumnHeader: false, // 操作列header添加按钮
   };
 ```
@@ -214,11 +225,11 @@ npm i anshare-multifunction-crud -S
 
 | 事件名称  |             说明             |                      回调参数                      |
 | :-------: | :--------------------------: | :------------------------------------------------: |
+| [el-table events](https://element.eleme.cn/#/zh-CN/component/table) |           [所有el-table其他事件见官网文档](https://element.eleme.cn/#/zh-CN/component/table)          |          -            |
 |   done    |       表格数据请求完成       |              整个 CrudTable 组件对象               |
 | selection |           多选事件           |              选中的行 (params: Array)              |
 |  change   | 监听 dialog 中 form 对象改变 | 返回当前表单对象以及当前表单 json (params: Object) |
 | form-btn-on-click |           表单内按钮组件点击回调           |             widget(表单组件json)              |
-| `el-table events` |           所有el-table其他事件见官网文档          |          https://element.eleme.cn/#/zh-CN/component/table            |
 
 
 #### Slots
