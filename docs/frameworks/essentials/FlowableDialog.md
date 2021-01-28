@@ -121,10 +121,6 @@ const ENUM = {
   - /act/task/approveopinion/list 获取常用签批意见接口
   - /file/fileList (list) 获取当前附件
 
-## 组件文档
+## 五、组件文档
 
-## methods
-
-| 方法名 | 说明 | 参数 |
-| :----: | :--: | :--: |
-
+待续

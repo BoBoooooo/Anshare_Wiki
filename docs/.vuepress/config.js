@@ -118,10 +118,7 @@ function genEssentialsSidebar(type = '') {
       '/frameworks/essentials/CrudTable.md',
       '/frameworks/essentials/FlowableDialog.md',
       '/frameworks/essentials/GenerateForm.md',
-      '/frameworks/essentials/GenerateFormDialog.md',
-      '/frameworks/essentials/SvgIcon.md',
-      '/frameworks/essentials/Echarts.md',
-      '/frameworks/essentials/FileUpload.md'
+      '/frameworks/essentials/GenerateFormDialog.md'
     ]
   } else if (type === 'devtools') {
     mapArr = [
