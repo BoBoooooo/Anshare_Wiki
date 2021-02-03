@@ -7,6 +7,7 @@ var { genNav, getComponentSidebar, deepClone } = utils
 module.exports = {
   title: 'Anshare Wiki百科 v1.1',
   description: '为创造而生',
+  theme: 'reco',
   base: '/',
   head: [
     [
@@ -18,6 +19,12 @@ module.exports = {
     ]
   ],
   themeConfig: {
+    type: 'blog',
+    author: 'Anshare',
+    codeTheme: 'tomorrow', // default 'tomorrow'
+    mode: 'light', // 默认 auto，auto 跟随系统，dark 暗色模式，light 亮色模式
+    modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
+    noFoundPageByTencent: false,
     sidebar: 'auto',
     sidebarDepth: 3,
     locales: {
