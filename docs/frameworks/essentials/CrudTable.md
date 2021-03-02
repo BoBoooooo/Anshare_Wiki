@@ -89,13 +89,30 @@ npm run demo
   在 main.js 中写入以下内容：
 
   ``` javascript
+  import Vue from 'vue';
   import AnshareMultifunctionCrud from 'anshare-multifunction-crud';
+  import 'anshare-multifunction-crud/lib/AnshareCrud.css';
+  import * as formApi from '@/api/system/form';
   import ElementUI from 'element-ui';
-  import 'anshare-multifunction-crud/lib/AnshareCrud.css'; // 先引入插件css,避免css污染
   import 'element-ui/lib/theme-chalk/index.css';
 
-  Vue.use(ElementUI)
-  Vue.use(AnshareMultifunctionCrud);
+/**
+ * AnshareMultifunctionCrud
+ * 插件内部需要动态传入表单表格请求方法
+ */
+const crudOption = {
+  ...formApi,
+  formDesignDbName: 'conf_form',
+  tableDesignDbName: 'conf_dynamictables',
+  getCodeValueUrl: '/conf/ad/codelist/getCodeValue',
+  codeTypeDbName: 'conf_ad_codelist_type',
+};
+if (process.env.VUE_APP_CDN === 'true') {
+  Vue.prototype.$CRUD = crudOption;
+} else {
+  Vue.use(AnshareMultifunctionCrud, crudOption);
+}
+
   ```
   
 #### 按需引入
