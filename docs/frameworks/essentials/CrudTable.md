@@ -160,6 +160,7 @@ if (process.env.VUE_APP_CDN === 'true') {
 |          参数          |                               说明                                |      类型       |                 可选值                  |  默认值   |
 | :--------------------: | :---------------------------------------------------------------: | :-------------: | :-------------------------------------: | :-------: |
 |     [el-table Props](https://element.eleme.cn/#/zh-CN/component/table)     |                             [见官网](https://element.eleme.cn/#/zh-CN/component/table)                               |      -      |                    -                    |     -     |
+|     columns      |                              指定表格json(传入后则不发出请求,支持tree结构json展示多级表头)                               |      Array      |                    -                    |     -     |
 |     expandRowKeys      |                              展开行                               |      Array      |                    -                    |     -     |
 |       listField        |                        response 中数据位置                        |     String      |             data/data.list              | data.list |
 |      setReadOnly       | GenerateFormDialog 中的表单禁用.null 表示均可编辑;{}表示全部只读; |     Object      |   null/{}/{whiteList:{},blackList:{}}   |   null    |  |
